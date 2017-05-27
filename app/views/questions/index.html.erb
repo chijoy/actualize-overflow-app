@@ -1,1 +1,9 @@
-index.html.erb
+<div class="row"> 
+  <%= @questions.each do |question| %>
+    <div class="thumbnail well">        
+      <h2>Title: <a href="/questions/<%= question.id %>"><%= question.title %></a></h2>
+      <h3>Question: <%= question.problem %></h3>
+      <h4>Posted by: <%= question.posted_by %></h4>
+    </div>
+  <% end %>
+</div>

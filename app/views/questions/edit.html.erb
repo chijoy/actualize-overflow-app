@@ -1,1 +1,17 @@
-edit.html.erb
+<h1>Edit Question</h1>
+
+<%= form_tag "/questions/#{@question.id}", method: :patch do %>
+  <div>
+    Title: <input type="text", name="title", value="<%= @question.title %>" >
+  </div>
+  <div>
+    Question: <input type="text", name="problem", value="<%= @question.problem %>">
+  </div>
+  <div>
+    Posted by: <input type="text", name="posted_by", value="<%= @question.posted_by %>">
+  </div>
+  <div>
+    <input type="submit", value="Update Question">
+  </div>
+
+<% end %>
