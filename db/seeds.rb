@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+# Question.create([{title: "Missing template", problem: "Error message says I'm missing a template", posted_by: "chijoy"}])
+
+# Question.create([{title: "Undefined method name", problem: "Error message says I have an undefined method name", posted_by: "chijoy"}])
