@@ -7,18 +7,18 @@
 
 <hr>
 
-<%= form_tag "/questions/#{@question.id}", method: :post do %>
+<%= form_tag "/answers/#{@answer.id}", method: :post do %>
   <div class="form-group">
     <%= text_area_tag :solution, nil, :class => "form-control" %>
   </div>
   <div class="form-group">
-    <%= submit_tag "Submit Note", :class=>"btn btn-sm btn-success" %>
+    <%= submit_tag "Submit Suggestion", :class=>"btn btn-sm btn-success" %>
   </div>
 <% end %>
 
 <table class="table table-hover">
   <tr>
-    <th>Solution</th>
+    <th>Suggestions</th>
   </tr>
   <% @question.answers.each do |answer| %>
   <tr>

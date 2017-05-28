@@ -13,8 +13,8 @@ class QuestionsController < ApplicationController
                                 title: params[:title],
                                 problem: params[:problem],
                                 posted_by: params[:posted_by])
-
-      redirect_to '/'
+    flash[:success] = "Great question!"
+    redirect_to '/questions/#{@question.id}'
   end
 
   def show
@@ -32,6 +32,7 @@ class QuestionsController < ApplicationController
                     problem: params[:problem],
                     posted_by: params[:posted_by])    
 
+    flash[:success] = "Your question has been updated."
     redirect_to "/questions/#{@question.id}"
   end
 
@@ -39,6 +40,7 @@ class QuestionsController < ApplicationController
     @question = Question.find_by(id: params[:id])
     @question.destroy
 
+    flash[:success] = "Your question was deleted."
     redirect_to '/'
   end
 end
