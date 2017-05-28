@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
   get '/' => 'questions#index'
   get '/questions' => 'questions#index'
   get '/questions/new' => 'questions#new'
@@ -12,4 +10,7 @@ Rails.application.routes.draw do
   patch '/questions/:id' => 'questions#update'
 
   delete '/questions/:id' => 'questions#destroy'
+
+  get '/answers/:id/edit' => 'answers#edit'
+  patch '/answers/:id' => 'answers#update'
 end
