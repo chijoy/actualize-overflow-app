@@ -10,3 +10,7 @@
 # Question.create([{title: "Missing template", problem: "Error message says I'm missing a template", posted_by: "chijoy"}])
 
 # Question.create([{title: "Undefined method name", problem: "Error message says I have an undefined method name", posted_by: "chijoy"}])
+
+Answer.create([{question_id: 1, solution: "That means you're missing a view"}])
+
+Answer.create([{question_id: 2, solution: "Check your relationships and your data."}])
