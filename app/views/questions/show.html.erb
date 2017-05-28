@@ -7,7 +7,7 @@
 
 <hr>
 
-<%= form_tag "/answers/#{@answer.id}", method: :post do %>
+<%= form_tag "/answers/#{@answer_id}", method: :post do %>
   <div class="form-group">
     <%= text_area_tag :solution, nil, :class => "form-control" %>
   </div>
