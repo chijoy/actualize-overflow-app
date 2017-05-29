@@ -1,4 +1,4 @@
-<h1>Edit Question</h1>
+<h1>Edit Your Question</h1>
 
 <hr>
 
@@ -14,18 +14,11 @@
   <div>
     Posted by: <input type="text", name="posted_by", value="<%= @question.posted_by %>">
   </div>
-  <div>
-    <input type="submit", value="Update Question">
+
+  <br>
+
+  <div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="btn btn-primary">Update Question</button>
   </div>
 
 <% end %>
-
-
-
-
-
-  <div class="form-group">
-  Enter a suggested solution:
-    <%= text_area_tag :suggestion, nil, :class => "form-control" %>
-  </div>
-
