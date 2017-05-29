@@ -9,7 +9,8 @@
 
 <%= form_tag "/answers/#{@answer_id}", method: :post do %>
   <div class="form-group">
-    <%= text_area_tag :solution, nil, :class => "form-control" %>
+  Enter a suggested solution:
+    <%= text_area_tag :suggestion, nil, :class => "form-control" %>
   </div>
   <div class="form-group">
     <%= submit_tag "Submit Suggestion", :class=>"btn btn-sm btn-success" %>
