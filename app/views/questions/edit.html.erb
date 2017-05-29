@@ -11,6 +11,9 @@
   <div>
     Question: <input type="text", name="problem", value="<%= @question.problem %>">
   </div>
+  <div class="form-group">
+    Status: <%= select_tag(:status, options_for_select([["Open", false], ["Resolved", true]], @question.status), :class => "form-control") %>
+  </div>
   <div>
     Posted by: <input type="text", name="posted_by", value="<%= @question.posted_by %>">
   </div>
@@ -22,3 +25,4 @@
   </div>
 
 <% end %>
+

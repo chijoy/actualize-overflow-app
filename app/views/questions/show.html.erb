@@ -1,6 +1,7 @@
-<h2>Title: <%= @question.title %></h2>
-<h2>Question: <%= @question.problem %></h2>
-<h3>Posted_by: <%= @question.posted_by %></h3>
+<h2>Question Title: <%= @question.title %></h2>
+<h4>Question: <%= @question.problem %></h4>
+<h4>Status: <%= @question.status %> </h4>
+<p>Posted by: <%= @question.posted_by %></p>
 
 <%= link_to "Edit", "/questions/#{@question.id}/edit" %>
 <%= link_to "Delete", "/questions/#{@question.id}", method: :delete %>

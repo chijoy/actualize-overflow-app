@@ -1,4 +1,17 @@
 class AnswersController < ApplicationController
+  
+  def new
+    @answer = Answer.new
+  end
+
+  def create
+    @answer = Answer.create(
+                            solution: params[:solution]
+                            )
+    flash[:success] = "Great suggestion!"
+    redirect_to '/answers/#{@answer.id}'
+  end
+
   def edit
     @answer = Answer.find_by(id: params[:id])
   end
