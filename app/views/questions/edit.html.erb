@@ -2,10 +2,9 @@
 
 <hr>
 
-<%= form_tag "/questions/#{@question.id}", method: :patch do %>
+<%= form_tag "/questions/#{@question.id}", method: :post do %>
   <div class="form-group">
     Title: 
-
     <%= text_area_tag :title, nil, :class => "form-control" %>
   </div>
   <div>
@@ -25,4 +24,8 @@
   </div>
 
 <% end %>
+
+<textarea name="question" rows="10" cols="30">
+Enter your question here.
+</textarea>
 
