@@ -13,7 +13,8 @@ class QuestionsController < ApplicationController
                                 title: params[:title],
                                 problem: params[:problem],
                                 posted_by: params[:posted_by],
-                                answer_id: params[:answer_id])
+                                answer_id: params[:answer_id],
+                                status: params[:status])
     flash[:success] = "Great question!"
     redirect_to '/questions/#{@question.id}'
   end
@@ -32,7 +33,8 @@ class QuestionsController < ApplicationController
                     title: params[:title],
                     problem: params[:problem],
                     posted_by: params[:posted_by],
-                    answer_id: params[:answer_id])    
+                    answer_id: params[:answer_id],
+                    status: params[:status]) 
 
     flash[:success] = "Your question has been updated."
     redirect_to "/questions/#{@question.id}"

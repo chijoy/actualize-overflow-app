@@ -1,31 +1,20 @@
-<h1>Edit Your Question</h1>
+<h1>Edit Question</h1>
 
-<hr>
-
-<%= form_tag "/questions/#{@question.id}", method: :post do %>
-  <div class="form-group">
-    Title: 
-    <%= text_area_tag :title, nil, :class => "form-control" %>
+<%= form_tag "/questions/#{@question.id}", method: :patch do %>
+  <div>
+    Title: <input type="text", name="title", value="<%= @question.title %>" >
   </div>
   <div>
     Question: <input type="text", name="problem", value="<%= @question.problem %>">
   </div>
-  <div class="form-group">
-    Status: <%= select_tag(:status, options_for_select([["Open", false], ["Resolved", true]], @question.status), :class => "form-control") %>
-  </div>
   <div>
     Posted by: <input type="text", name="posted_by", value="<%= @question.posted_by %>">
   </div>
-
-  <br>
-
-  <div class="btn-group" role="group" aria-label="...">
-    <button type="button" class="btn btn-primary">Update Question</button>
+  <div>
+    Status: <input type="text", name="status", value="<%= @question.status %>">
+  </div>
+  <div>
+    <input type="submit", value="Update Question">
   </div>
 
 <% end %>
-
-<textarea name="question" rows="10" cols="30">
-Enter your question here.
-</textarea>
-

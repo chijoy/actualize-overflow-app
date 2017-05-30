@@ -1,0 +1,7 @@
+<div class="row"> 
+  <% @answers.each do |answer| %>
+    <div class="thumbnail well">        
+      <h2>Solution: <a href="/answers/<%= answer.id %>"><%= answer.solution %></a></h2>
+    </div>
+  <% end %>
+</div>

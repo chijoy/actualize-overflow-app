@@ -11,9 +11,16 @@ Rails.application.routes.draw do
 
   delete '/questions/:id' => 'questions#destroy'
 
+
+  get '/' => 'answers#index'
+  get '/answers' => 'answers#index'
   get '/answers/new' => 'answers#new'
   post '/answers' => 'answers#create'
 
+  get '/answers/:id' => 'answers#show'
+
   get '/answers/:id/edit' => 'answers#edit'
   patch '/answers/:id' => 'answers#update'
+
+  delete '/answers/:id' => 'answers#destroy'
 end

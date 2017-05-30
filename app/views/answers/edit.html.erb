@@ -1,0 +1,11 @@
+<h1>Edit Solution</h1>
+
+<%= form_tag "/answers/#{@answer.id}", method: :patch do %>
+  <div>
+    Solution: <input type="text", name="solution", value="<%= @answer.solution %>" >
+  </div>
+  <div>
+    <input type="submit", value="Update solution">
+  </div>
+
+<% end %>
