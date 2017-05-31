@@ -2,6 +2,16 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.all
+
+    search_term = params[:search_term]
+
+    if search_term
+      @questions = @questions.where(
+                                  "title iLIKE ? OR problem iLIKE ?", 
+                                  "%#{search_term}%",
+                                  "%#{search_term}%"
+                                  )
+    end
   end
 
   def new
@@ -21,6 +31,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find_by(id: params[:id])
+
   end
 
   def edit
