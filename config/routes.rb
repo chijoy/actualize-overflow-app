@@ -23,4 +23,7 @@ Rails.application.routes.draw do
   patch '/answers/:id' => 'answers#update'
 
   delete '/answers/:id' => 'answers#destroy'
+
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
 end
