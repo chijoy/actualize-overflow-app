@@ -1,6 +1,14 @@
 class QuestionsController < ApplicationController
 
   def index
+
+    if session[:count] == nil
+      session[:count] = 0
+    end
+
+    session[:count] += 1
+    @visit_count = session[:count]
+
     @questions = Question.all
 
     search_term = params[:search_term]
