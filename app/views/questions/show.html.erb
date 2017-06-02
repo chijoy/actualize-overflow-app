@@ -3,31 +3,28 @@
 <h4>Status: <%= @question.status %> </h4>
 <p>Posted by: <%= @question.posted_by %></p>
 
-<%= link_to "Edit", "/questions/#{@question.id}/edit" %>
-<%= link_to "Delete", "/questions/#{@question.id}", method: :delete %>
-
-<hr>
-
-<%= link_to "Submit a Solution", "/answers/new" %>
+<%= link_to "Edit", "/questions/#{@question.id}/edit", class: 'btn btn-warning' %>
+<%= link_to "Delete", "/questions/#{@question.id}", method: :delete, class: 'btn btn-danger' %>
 
 <hr>
 
 <%=  form_tag "/answers", method: :post do %>
   <div class="form-group">
-    Suggestion
+    Submit a Suggestion
     <%= text_area_tag :solution, nil, :class => "form-control" %>
   </div>
   <%= hidden_field_tag :question_id, @question.id, :class => "form-control" %>
   <div class="form-group">
-    <%= submit_tag "Submit", :class => "btn btn-sm btn-success" %>
+    <%= submit_tag "Submit your Suggestion", :class => "btn btn-sm btn-success" %>
   </div>
 <% end %>
 
-<table class="table table-hover">
-  <tr>
-    <th>Suggestion</th>
-  </tr>
+<hr>
+
+<h3>All Suggestions</h3>
+
   <% @question.answers.each do |answer| %>
-    <tr><%= answer.solution %></tr>
+    <h4>Suggestion: <%= answer.solution %></h4>
+    <p>Posted by: <%= answer.posted_by %></p>
   <% end %>
-</table>
+

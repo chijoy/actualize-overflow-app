@@ -11,7 +11,8 @@ class AnswersController < ApplicationController
   def create
     @answer = Answer.new(
                             solution: params[:solution],
-                            question_id: params[:question_id]
+                            question_id: params[:question_id],
+                            user_id: current_user.id
                             )
     if @answer.save
       flash[:success] = "Great suggestion!"

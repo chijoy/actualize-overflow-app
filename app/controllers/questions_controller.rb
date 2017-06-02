@@ -30,9 +30,9 @@ class QuestionsController < ApplicationController
     @question = Question.create(
                                 title: params[:title],
                                 problem: params[:problem],
-                                posted_by: params[:posted_by],
                                 answer_id: params[:answer_id],
-                                status: params[:status])
+                                status: params[:status],
+                                user_id: current_user.id)
     flash[:success] = "Great question!"
     redirect_to '/questions/#{@question.id}'
   end
@@ -51,7 +51,6 @@ class QuestionsController < ApplicationController
     @question.update(
                     title: params[:title],
                     problem: params[:problem],
-                    posted_by: params[:posted_by],
                     answer_id: params[:answer_id],
                     status: params[:status]) 
 
