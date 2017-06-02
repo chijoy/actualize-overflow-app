@@ -28,6 +28,6 @@ Rails.application.routes.draw do
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
-  get '/logous' => 'sessions#destroy'
+  get '/logout' => 'sessions#destroy'
   post '/users' => 'users#create'
 end
