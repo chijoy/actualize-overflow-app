@@ -12,11 +12,12 @@
 
 <hr>
 
-<%=  form_tag "/questions/#{@question.id}", method: :patch do %>
+<%=  form_tag "/answers", method: :post do %>
   <div class="form-group">
     Suggestion
     <%= text_area_tag :solution, nil, :class => "form-control" %>
   </div>
+  <%= hidden_field_tag :question_id, @question.id, :class => "form-control" %>
   <div class="form-group">
     <%= submit_tag "Submit", :class => "btn btn-sm btn-success" %>
   </div>
@@ -27,9 +28,6 @@
     <th>Suggestion</th>
   </tr>
   <% @question.answers.each do |answer| %>
-  <tr>
-    <td><%= answer.solution.where() %></td>
-    
-  </tr>
+    <tr><%= answer.solution %></tr>
   <% end %>
 </table>

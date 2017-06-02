@@ -9,11 +9,17 @@ class AnswersController < ApplicationController
   end
 
   def create
-    @answer = Answer.create(
-                            solution: params[:solution]
+    @answer = Answer.new(
+                            solution: params[:solution],
+                            question_id: params[:question_id]
                             )
-    flash[:success] = "Great suggestion!"
-    redirect_to '/answers/#{@answer.id}'
+    if @answer.save
+      flash[:success] = "Great suggestion!"
+      redirect_to "/questions/#{params[:question_id]}"
+    else
+      flash[:danger] = "Error"
+      render "/questions/#{params[:question_id]}"
+    end
   end
 
   def show
