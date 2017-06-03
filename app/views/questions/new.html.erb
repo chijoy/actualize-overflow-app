@@ -1,5 +1,5 @@
+<hr>
 <h1>New Question</h1>
-
 <hr>
 
 <%= form_tag "/questions", method: :post do %>
@@ -10,7 +10,7 @@
   <br>
   <div class="form-group">
     <%= label_tag :title, "Question:" %>
-    <%= text_area_tag :question, nil, :class => "form-control" %>
+    <%= text_area_tag :problem, nil, :class => "form-control" %>
   </div>
   <br>
   <div>

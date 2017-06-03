@@ -9,7 +9,7 @@ class QuestionsController < ApplicationController
     session[:count] += 1
     @visit_count = session[:count]
 
-    @questions = Question.all
+    @questions = Question.all.order('created_at desc')
 
     search_term = params[:search_term]
 
