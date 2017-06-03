@@ -1,9 +1,9 @@
 <div class="row"> 
   <% @questions.each do |question| %>
     <div class="thumbnail well">        
-      <h2><a href="/questions/<%= question.id %>"><%= question.title %></a></h2>
-      <h4><%= question.problem %></h4>
-      <h4>Status: <%= question.status %> </h4>
+      <h4><a href="/questions/<%= question.id %>"><%= question.title %></a></h4>
+      <h5><%= question.problem %></h5>
+      <p>Status: <%= question.status %> </p>
       <p>Posted by: <%= question.posted_by %></p>
     </div>
   <% end %>

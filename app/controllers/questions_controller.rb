@@ -15,7 +15,8 @@ class QuestionsController < ApplicationController
 
     if search_term
       @questions = @questions.where(
-                                  "title iLIKE ? OR problem iLIKE ?", 
+                                  "title iLIKE ? OR problem iLIKE ? OR status iLIKE ?", 
+                                  "%#{search_term}%",
                                   "%#{search_term}%",
                                   "%#{search_term}%"
                                   )

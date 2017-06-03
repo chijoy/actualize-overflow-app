@@ -1,17 +1,22 @@
-<h2><%= @question.title %></h2>
-<h4><%= @question.problem %></h4>
-<h4>Status: <%= @question.status %> </h4>
+<hr>
+<h3>Question</h3>
+<hr>
+
+<h4><%= @question.title %></h4>
+<h5><%= @question.problem %></h5>
+<p>Status: <%= @question.status %> </p>
 <p>Posted by: <%= @question.posted_by %></p>
 
-<%= link_to "Edit", "/questions/#{@question.id}/edit", class: 'btn btn-warning' %>
-<%= link_to "Delete", "/questions/#{@question.id}", method: :delete, class: 'btn btn-danger' %>
+<%= link_to "Edit", "/questions/#{@question.id}/edit", class: 'btn btn-sm btn-warning' %>
+<%= link_to "Delete", "/questions/#{@question.id}", method: :delete, class: 'btn btn-sm btn-danger' %>
 
+<hr>
+<h3>Suggest a Solution</h3>
 <hr>
 
 <%=  form_tag "/answers", method: :post do %>
   <div class="form-group">
-    <%= label_tag :solution, "Suggested Solution:" %>
-    <%= text_area_tag :solution, nil, :class => "form-control" %>
+    <%= text_area_tag :solution, nil, :class => "form-control", :placeholder => "Enter your awesome suggestion here." %>
   </div>
   <%= hidden_field_tag :question_id, @question.id, :class => "form-control" %>
   <div class="form-group">
@@ -20,11 +25,16 @@
 <% end %>
 
 <hr>
-
 <h3>All Suggestions</h3>
+<hr>
 
   <% @question.answers.each do |answer| %>
-    <h4><%= answer.solution %></h4>
+    <h5><%= answer.solution %></h5>
     <p>Posted by: <%= answer.posted_by %></p>
+
+    <%= link_to "Edit", "/answers/#{@answer.id}/edit", :class  => 'btn btn-sm btn-warning' %>
+    <%= link_to "Delete", "/answers/answer.id", method: :delete, :class => 'btn btn-sm btn-danger' %>
+    
+
   <% end %>
 
