@@ -1,5 +1,5 @@
-<h2>Question Title: <%= @question.title %></h2>
-<h4>Question: <%= @question.problem %></h4>
+<h2><%= @question.title %></h2>
+<h4><%= @question.problem %></h4>
 <h4>Status: <%= @question.status %> </h4>
 <p>Posted by: <%= @question.posted_by %></p>
 
@@ -10,7 +10,7 @@
 
 <%=  form_tag "/answers", method: :post do %>
   <div class="form-group">
-    Submit a Suggestion
+    <%= label_tag :solution, "Suggested Solution:" %>
     <%= text_area_tag :solution, nil, :class => "form-control" %>
   </div>
   <%= hidden_field_tag :question_id, @question.id, :class => "form-control" %>
@@ -24,7 +24,7 @@
 <h3>All Suggestions</h3>
 
   <% @question.answers.each do |answer| %>
-    <h4>Suggestion: <%= answer.solution %></h4>
+    <h4><%= answer.solution %></h4>
     <p>Posted by: <%= answer.posted_by %></p>
   <% end %>
 

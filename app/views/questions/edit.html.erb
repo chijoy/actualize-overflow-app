@@ -1,17 +1,27 @@
 <h1>Edit Question</h1>
 
+<hr>
+
 <%= form_tag "/questions/#{@question.id}", method: :patch do %>
   <div>
-    Title: <input type="text", name="title", value="<%= @question.title %>" >
+    <%= label_tag :title, "Question Title:" %>
+    <%= text_area_tag :title, @question.title, :class => "form-control" %>
   </div>
+  <br>
   <div>
-    Question: <input type="text", name="problem", value="<%= @question.problem %>">
-  </div>
+    <%= label_tag :problem, "Question:" %>
+    <%= text_area_tag :problem, @question.problem, :class => "form-control" %>
+  </div> 
+  <br>
   <div>
-    Status: <input type="text", name="status", value="<%= @question.status %>">
+    <%= label_tag :status, "Assign Status: " %>
+    <%= select_tag :status, options_for_select([
+                                                "Open",
+                                                "Answered"],
+                                                @question.status) %>
   </div>
-  <div>
-    <input type="submit", value="Update Question">
+  <br>
+  <div class="form-group">
+    <%= submit_tag "Update Question", :class => "btn btn-sm btn-success" %>
   </div>
-
 <% end %>

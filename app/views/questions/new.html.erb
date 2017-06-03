@@ -1,19 +1,29 @@
 <h1>New Question</h1>
 
-<%= form_tag "/questions", method: :post do %>
-  <div>
-    Title: <input type="text", name="title">
-  </div>
-  <div>
-    Question: <input type="text", name="problem">
-  </div>
-  <div>
-    Status: <input type="text", name="status">
-  </div>
-  <div>
-    <input type="submit", value="Submit Question">
-  </div>
+<hr>
 
+<%= form_tag "/questions", method: :post do %>
+  <div class="form-group">
+    <%= label_tag :title, "Question Title:" %>
+    <%= text_area_tag :title, nil, :class => "form-control" %>
+  </div>
+  <br>
+  <div class="form-group">
+    <%= label_tag :title, "Question:" %>
+    <%= text_area_tag :question, nil, :class => "form-control" %>
+  </div>
+  <br>
+  <div>
+    <%= label_tag :status, "Assign Status: " %><br>
+    <%= select_tag :status, options_for_select([
+                                                "Open",
+                                                "Answered"],
+                                                @question.status) %>
+  </div>
+  <br>
+  <div class="form-group">
+    <%= submit_tag "Submit your Question", :class => "btn btn-sm btn-success" %>
+  </div>
 <% end %>
 
 

@@ -1,8 +1,8 @@
 <div class="row"> 
   <% @questions.each do |question| %>
     <div class="thumbnail well">        
-      <h2>Question Title: <a href="/questions/<%= question.id %>"><%= question.title %></a></h2>
-      <h4>Question: <%= question.problem %></h4>
+      <h2><a href="/questions/<%= question.id %>"><%= question.title %></a></h2>
+      <h4><%= question.problem %></h4>
       <h4>Status: <%= question.status %> </h4>
       <p>Posted by: <%= question.posted_by %></p>
     </div>
