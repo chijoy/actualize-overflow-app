@@ -35,6 +35,8 @@ class AnswersController < ApplicationController
     @answer = Answer.find_by(id: params[:id])
     @answer.update(
                     solution: params[:solution])
+    flash[:success] = "Your answer has been updated."
+    redirect_to "/"
   end
 
   def destroy

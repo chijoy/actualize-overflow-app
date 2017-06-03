@@ -1,13 +1,17 @@
-<h1>Log In to Actualize Overflow</h1>
+<hr>
+<h3>Log In to Actualize Overflow</h3>
+<hr>
 
 <%= form_tag '/login', method: :post do %>
   <div>
-    <%= label_tag :email %> 
-    <%= email_field_tag :email %>    
+    <%= label_tag :email, "Email:" %>
+    <%= email_field_tag :email, nil, :class => "form-control" %>   
   </div>
+  <br>
   <div>
-    <%= label_tag :password %> 
-    <%= password_field_tag :password %>    
+    <%= label_tag :password, "Password:" %>
+    <%= password_field_tag :password, nil, :class => "form-control" %>      
   </div>
-  <%= submit_tag 'Log Me In' %>
+  <br>
+  <%= submit_tag "Log Me In", :class => "btn btn-sm btn-success" %>
 <% end %>

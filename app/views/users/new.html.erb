@@ -1,21 +1,27 @@
-<h1>Sign Up Here</h1>
+<hr>
+<h3>Sign Up Here</h3>
+<hr>
 
 <%= form_tag "/users", method: :post do %>
   <div>
-    <%= label_tag :name %>
-    <%= text_field_tag :name %>
+    <%= label_tag :name, "Name:" %>
+    <%= text_field_tag :name, nil, :class => "form-control" %>   
   </div>
+  <br>
   <div>
-    <%= label_tag :email %>
-    <%= email_field_tag :email %>
+    <%= label_tag :email, "Email:" %>
+    <%= email_field_tag :email, nil, :class => "form-control" %>
   </div>
+  <br>
   <div>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
+    <%= label_tag :password, "Password:" %>
+    <%= password_field_tag :password, nil, :class => "form-control" %>
   </div>
+  <br>
   <div>
-    <%= label_tag :password_confirmation %>
-    <%= password_field_tag :password_confirmation %>
+    <%= label_tag :password_confirmation, "Re-Enter your Password:" %>
+    <%= password_field_tag :password_confirmation, nil, :class => "form-control"  %>
   </div>
-  <%= submit_tag 'Sign Me Up!'  %>
+  <br>
+  <%= submit_tag 'Sign Me Up!', :class => "btn btn-sm btn-success"  %>
 <% end %>
