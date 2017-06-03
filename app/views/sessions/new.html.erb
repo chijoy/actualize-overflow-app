@@ -4,11 +4,13 @@
 
 <%= form_tag '/login', method: :post do %>
   <div>
+    <span class="text-danger"> * </span>
     <%= label_tag :email, "Email:" %>
     <%= email_field_tag :email, nil, :class => "form-control" %>   
   </div>
   <br>
   <div>
+    <span class="text-danger"> * </span>
     <%= label_tag :password, "Password:" %>
     <%= password_field_tag :password, nil, :class => "form-control" %>      
   </div>
