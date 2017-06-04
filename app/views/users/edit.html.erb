@@ -1,0 +1,27 @@
+<%= form_tag "/users/#{@user.id}", method: :patch do %>
+  <div>
+    <%= label_tag :name, "Name:" %>
+    <%= text_area_tag :name, @user.name, :class => "form-control" %>
+  </div>
+  <br>
+  <div>
+    <%= label_tag :email, "Email:" %>
+    <%= email_field_tag :email, @user.email, :class => "form-control" %>
+  </div>
+  <br>
+  <div>
+    <span class="text-danger"> * </span>
+    <%= label_tag :password, "Password:" %>
+    <%= password_field_tag :password, @user.password, :class => "form-control" %>
+  </div>
+  <br>
+  <div>
+    <span class="text-danger"> * </span>
+    <%= label_tag :password_confirmation, "Re-Enter your Password:" %>
+    <%= password_field_tag :password_confirmation, @user.password_confirmation, :class => "form-control"  %>
+  </div>
+  <br>
+  <div class="form-group">
+    <%= submit_tag "Update User", :class => "btn btn-sm btn-success" %>
+  </div>
+<% end %>
