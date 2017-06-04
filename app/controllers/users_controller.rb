@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @users = User.where(user_id: @user.id).order('created_at desc')
+    @user = User.find_by(id: params[:id])
   end
 
   def new

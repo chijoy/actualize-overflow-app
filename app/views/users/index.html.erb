@@ -1,0 +1,8 @@
+<div class="row"> 
+  <% @users.each do |user| %>
+    <div class="thumbnail well">        
+      <h4><a href="/users/<%= user.id %>"><%= user.name %></a></h4>
+      <h5><%= user.email %></h5>
+    </div>
+  <% end %>
+</div>
