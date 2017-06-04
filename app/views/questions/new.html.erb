@@ -4,11 +4,13 @@
 
 <%= form_tag "/questions", method: :post do %>
   <div class="form-group">
+    <span class="text-danger"> * </span>
     <%= label_tag :title, "Question Title:" %>
     <%= text_area_tag :title, nil, :class => "form-control" %>
   </div>
   <br>
   <div class="form-group">
+    <span class="text-danger"> * </span>
     <%= label_tag :title, "Question:" %>
     <%= text_area_tag :problem, nil, :class => "form-control" %>
   </div>
