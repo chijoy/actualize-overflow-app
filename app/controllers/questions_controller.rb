@@ -40,7 +40,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find_by(id: params[:id])
-
+    redirect_to '/' unless current_user
   end
 
   def edit

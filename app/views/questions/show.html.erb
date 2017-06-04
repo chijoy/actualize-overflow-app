@@ -6,7 +6,7 @@
 <h5><%= @question.problem %></h5>
 <p>Status: <%= @question.status %> </p>
 <p>Posted by: <%= @question.posted_by %></p>
-<% if current_user.id == @question.user.id %> 
+<% if current_user.id == @question.posted_by %> 
   <%= link_to "Edit", "/questions/#{@question.id}/edit", class: 'btn btn-sm btn-warning' %>
   <%= link_to "Delete", "/questions/#{@question.id}", method: :delete, class: 'btn btn-sm btn-danger' %>
 <% end %>
