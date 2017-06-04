@@ -6,7 +6,7 @@
 <h5><%= @question.problem %></h5>
 <p>Status: <%= @question.status %> </p>
 <p>Posted by: <%= @question.posted_by %></p>
-<% if current_user %> 
+<% if current_user.id == @question.user.id %> 
   <%= link_to "Edit", "/questions/#{@question.id}/edit", class: 'btn btn-sm btn-warning' %>
   <%= link_to "Delete", "/questions/#{@question.id}", method: :delete, class: 'btn btn-sm btn-danger' %>
 <% end %>
@@ -35,8 +35,9 @@
     <h5><%= answer.solution %></h5>
     <p>Posted by: <%= answer.posted_by %></p>
 
-    <%= link_to "Edit", "/answers/#{answer.id}/edit", :class  => 'btn btn-sm btn-warning' %>
-    <%= link_to "Delete", "/answers/answer.id", method: :delete, :class => 'btn btn-sm btn-danger' %>
-
+    <% if current_user.id == answer.posted_by %> 
+      <%= link_to "Edit", "/answers/#{answer.id}/edit", :class  => 'btn btn-sm btn-warning' %>
+      <%= link_to "Delete", "/answers/answer.id", method: :delete, :class => 'btn btn-sm btn-danger' %>
+    <% end %>
   <% end %>
 
