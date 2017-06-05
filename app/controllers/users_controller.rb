@@ -20,7 +20,7 @@ class UsersController < ApplicationController
                     )
 
     if @user.save
-      session[:user_id] = user.id
+      session[:user_id] = @user.id
       flash[:success] = "Yay! You created an account!"
       redirect_to '/'
     else
