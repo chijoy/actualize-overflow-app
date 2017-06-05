@@ -21,6 +21,9 @@ class QuestionsController < ApplicationController
                                   "%#{search_term}%",
                                   "%#{search_term}%"
                                   )
+    else
+      # flash[:warning] = "No matching questions could be found. Create a question now!"
+      # redirect_to '/questions/new'
     end
   end
 
