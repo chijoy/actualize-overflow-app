@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
 
   def index
 
@@ -28,14 +29,18 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = Question.create(
+    @question = Question.new(
                                 title: params[:title],
                                 problem: params[:problem],
                                 answer_id: params[:answer_id],
                                 status: params[:status],
                                 user_id: current_user.id)
-    flash[:success] = "Great question!"
-    redirect_to '/questions/#{@question.id}'
+    if @question.save
+      flash[:success] = "Great question!"
+      redirect_to '/questions/#{@question.id}'
+    else
+      render "new.html.erb"
+    end
   end
 
   def show

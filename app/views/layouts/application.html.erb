@@ -36,7 +36,7 @@
             <li class="active"><a href="/questions/new">Submit a Question <span class="sr-only">(current)</span></a></li>
 
             <% if current_user %>
-              <li><a>Welcome <%= current_user.name %>!</a></li>
+              <li><a href="/users/#{@current_user.id}">Welcome <%= current_user.name %>!</a></li>
             <% end %>
 
             <% if current_user %>

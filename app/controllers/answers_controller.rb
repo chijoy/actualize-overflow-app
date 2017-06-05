@@ -18,7 +18,7 @@ class AnswersController < ApplicationController
       flash[:success] = "Great suggestion!"
       redirect_to "/questions/#{params[:question_id]}"
     else
-      flash[:danger] = "Error"
+      @errors = answer.errors.full_message
       render "/questions/#{params[:question_id]}"
     end
   end
@@ -43,7 +43,7 @@ class AnswersController < ApplicationController
     @answer = Answer.find_by(id: params[:id])
     @answer.destroy
 
-    flash[:success] = "Your answer was deleted."
+    flash[:success] = "Your answer was deleted. :("
     redirect_to '/'
   end
 end
