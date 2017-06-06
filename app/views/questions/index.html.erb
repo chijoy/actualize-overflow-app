@@ -5,7 +5,7 @@
       <h5><%= question.problem %></h5>
       <p>Status: <%= question.status %> </p>
       <p>Posted by: <%= question.posted_by %></p>
-      <p>Number of Suggestions:<%=  %></p>
+      <p>Number of Suggestions: <%= question.answers.count %></p>
     </div>
   <% end %>
 </div>
