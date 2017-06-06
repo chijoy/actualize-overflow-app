@@ -8,4 +8,9 @@ class Question < ApplicationRecord
   def posted_by
     user.name
   end
+
+  def answer_count
+    # @answer = Answer.find_by(question_id: ??????)
+    # @answer.questions.count
+  end
 end

@@ -11,23 +11,24 @@
   <%= link_to "Delete", "/questions/#{@question.id}", method: :delete, class: 'btn btn-sm btn-danger' %>
 <% end %>
 
-<hr>
-<h3>Suggest a Solution</h3>
-<hr>
+<div class="answers">
+  <hr>
+  <h3>Suggest a Solution</h3>
+  <hr>
 
-<%=  form_tag "/answers", method: :post do %>
-  <div class="form-group">
-    <%= text_area_tag :solution, nil, :class => "form-control", :placeholder => "Enter your awesome suggestion here." %>
-  </div>
-  <%= hidden_field_tag :question_id, @question.id, :class => "form-control" %>
-  <div class="form-group">
-    <%= submit_tag "Submit your Suggestion", :class => "btn btn-sm btn-success" %>
-  </div>
-<% end %>
+  <%=  form_tag "/answers", method: :post do %>
+    <div class="form-group">
+      <%= text_area_tag :solution, nil, :class => "form-control", :placeholder => "Enter your awesome suggestion here." %>
+    </div>
+    <%= hidden_field_tag :question_id, @question.id, :class => "form-control" %>
+    <div class="form-group">
+      <%= submit_tag "Submit your Suggestion", :class => "btn btn-sm btn-success" %>
+    </div>
+  <% end %>
 
-<hr>
-<h3>All Suggestions</h3>
-<hr>
+  <hr>
+  <h3>All Suggestions</h3>
+  <hr>
 
   <% @question.answers.each do |answer| %>
     <h5><%= answer.solution %></h5>
@@ -38,4 +39,7 @@
       <%= link_to "Delete", "/answers/answer.id", method: :delete, :class => 'btn btn-sm btn-danger' %>
     <% end %>
   <% end %>
+
+</div>
+
 
