@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(name: params[:name],
                     email: params[:email],
+                    team: params[:team],
                     password: params[:password],
                     password_confirmation: params[:password_confirmation]
                     )
@@ -39,6 +40,7 @@ class UsersController < ApplicationController
     if @user.update({
       name: params[:name],
       email: params[:email],
+      team: params[:team],
       password: params[:password],
       password_confirmation: params[:password_confirmation],
       admin: params[:admin],

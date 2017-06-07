@@ -35,6 +35,14 @@
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="/questions/new">Submit a Question <span class="sr-only">(current)</span></a></li>
 
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Filter by Status <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Open</a></li>              
+                <li><a href="#">Answered</a></li>
+              </ul>
+            </li>
+
             <% if current_user %>
               <li><a href="/users/#{@current_user.id}">Welcome <%= current_user.name %>!</a></li>
             <% end %>

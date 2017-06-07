@@ -10,6 +10,11 @@
   </div>
   <br>
   <div>
+    <%= label_tag :team, "Team:" %>
+    <%= select_tag(:team, options_for_select(team, nil), :prompt => "Please Select", :class => "form-control") %>
+  </div>
+  <br>
+  <div>
     <span class="text-danger"> * </span>
     <%= label_tag :password, "Password:" %>
     <%= password_field_tag :password, @user.password, :class => "form-control" %>
