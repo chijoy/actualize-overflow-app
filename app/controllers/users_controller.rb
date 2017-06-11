@@ -13,12 +13,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(name: params[:name],
-                    email: params[:email],
-                    team: params[:team],
-                    password: params[:password],
-                    password_confirmation: params[:password_confirmation]
-                    )
+    @user = User.new(
+                      name: params[:name],
+                      email: params[:email],
+                      team: params[:team],
+                      password: params[:password],
+                      password_confirmation: params[:password_confirmation]
+                      )
 
     if @user.save
       session[:user_id] = @user.id
@@ -38,13 +39,13 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update({
-      name: params[:name],
-      email: params[:email],
-      team: params[:team],
-      password: params[:password],
-      password_confirmation: params[:password_confirmation],
-      admin: params[:admin],
-      })
+                      name: params[:name],
+                      email: params[:email],
+                      team: params[:team],
+                      password: params[:password],
+                      password_confirmation: params[:password_confirmation],
+                      admin: params[:admin]
+                      })
 
     flash[:success] = "Your info is updated."
     redirect_to "/users/#{@user.id}"

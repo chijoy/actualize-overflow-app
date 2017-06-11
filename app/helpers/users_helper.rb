@@ -3,6 +3,8 @@ module UsersHelper
     [
       ['Dragon Drop'],
       ['!Strange'],
+      ['Self.actualize'],
+      ['brain.inject']
       ['Other']
     ]
   end
