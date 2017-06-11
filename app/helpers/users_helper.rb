@@ -3,7 +3,7 @@ module UsersHelper
     [
       ['Dragon Drop'],
       ['!Strange'],
-      ['Self.actualize']
+      ['Self.actualize'],
       ['Other']
     ]
   end
