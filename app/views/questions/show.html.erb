@@ -15,7 +15,6 @@
   <p>Posted by: <%= answer.posted_by %></p>
   <p><a href="/users/#{@user.id}"></a></p>
   
-
   <% if current_user.id == answer.user_id %> 
     <%= link_to "Edit", "/answers/#{answer.id}/edit", :class  => 'btn btn-sm btn-warning' %>
     <%= link_to "Delete", "/answers/answer.id", method: :delete, :class => 'btn btn-sm btn-danger' %>
