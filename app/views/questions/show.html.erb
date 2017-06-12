@@ -1,7 +1,11 @@
 <h3><%= @question.title %></h3>
 <h4><%= @question.problem %></h4>
+<% if @question.status == "Answered" %>
+  <h4>Resolution: <%= @question.resolution %></h4>
+<% end %>
 <p>Status: <%= @question.status %> </p>
-<p>Posted by: <%= @question.posted_by %></p>
+<p>Posted by: <%= link_to @question.posted_by, "/users/#{@question.user.id}" %></p>
+
 <% if current_user.id == @question.user_id %> 
   <%= link_to "Edit", "/questions/#{@question.id}/edit", class: 'btn btn-sm btn-warning' %>
   <%= link_to "Delete", "/questions/#{@question.id}", method: :delete, class: 'btn btn-sm btn-danger' %>
@@ -12,8 +16,7 @@
 
 <% @question.answers.each do |answer| %>
   <h5><%= answer.solution %></h5>
-  <p>Posted by: <%= answer.posted_by %></p>
-  <p><a href="/users/#{@user.id}"></a></p>
+  <p>Posted by: <%= link_to answer.posted_by, "/users/#{answer.user.id}" %></p>
   
   <% if current_user.id == answer.user_id %> 
     <%= link_to "Edit", "/answers/#{answer.id}/edit", :class  => 'btn btn-sm btn-warning' %>

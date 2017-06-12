@@ -61,6 +61,7 @@ class QuestionsController < ApplicationController
                     title: params[:title],
                     problem: params[:problem],
                     answer_id: params[:answer_id],
+                    resolution: params[:resolution],
                     status: params[:status]) 
 
     flash[:success] = "Your question has been updated."

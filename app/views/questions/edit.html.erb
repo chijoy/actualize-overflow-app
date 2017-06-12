@@ -14,9 +14,16 @@
     <br>
     <%= select_tag :status, options_for_select([
                                                 "Open",
-                                                "Answered"],
-                                                @question.status) %>
+                                                "Answered"
+                                                ],
+                                                @question.status
+                                                ) %>
   </div>
+  <br>
+  <div>
+    <%= label_tag :resolution, "Resolution: " %>
+    <%= text_area_tag :resolution, @question.resolution, :class => "form-control" %>
+  </div> 
   <br>
   <div class="form-group">
     <%= submit_tag "Update Question", :class => "btn btn-sm btn-success" %>

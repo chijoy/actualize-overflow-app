@@ -3,8 +3,11 @@
     <div class="thumbnail well">        
       <h4><a href="/questions/<%= question.id %>"><%= question.title %></a></h4>
       <h5><%= question.problem %></h5>
+      <% if question.status == "Answered" %>
+        <p>Resolution: <%= question.resolution %></p>
+      <% end %>
       <p>Status: <%= question.status %> </p>
-      <p>Posted by: <%= question.posted_by %></p>
+      <p>Posted by: <%= link_to question.posted_by, "/users/#{question.user.id}" %></p>
       <p>Number of Suggestions: <%= question.answers.count %></p>
     </div>
   <% end %>
