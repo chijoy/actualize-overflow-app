@@ -13,6 +13,8 @@ class QuestionsController < ApplicationController
     @questions = Question.all.order('created_at desc')
 
     search_term = params[:search_term]
+    status = params[:status]
+
 
     if search_term
       @questions = @questions.where(
@@ -21,9 +23,12 @@ class QuestionsController < ApplicationController
                                   "%#{search_term}%",
                                   "%#{search_term}%"
                                   )
-    else
-      # flash[:warning] = "No matching questions could be found. Create a question now!"
-      # redirect_to '/questions/new'
+      if @questions.count == 0
+        flash[:warning] = "No matching questions could be found. Create a question now!"
+        redirect_to '/questions/new'
+      end
+    elsif status
+      @questions = Question.where(status: status)
     end
   end
 

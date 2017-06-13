@@ -39,13 +39,13 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Filter by Status <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Open</a></li>              
-                <li><a href="/questions?status=<% Question.where(status: "Answered") %>">Answered</a></li>
+                <li><a href="/questions?status=Open">Open</a></li>              
+                <li><a href="/questions?status=Answered">Answered</a></li>
               </ul>
             </li>
 
             <% if current_user %>
-              <li><a href="#">Welcome <%= current_user.name %>!</a></li>
+              <li> <%= link_to current_user.name, "/users/#{current_user.id}" %> </li>
             <% end %>
 
             <% if current_user %>
