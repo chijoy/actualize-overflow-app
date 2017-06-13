@@ -42,6 +42,7 @@ class QuestionsController < ApplicationController
                                 problem: params[:problem],
                                 answer_id: params[:answer_id],
                                 status: params[:status],
+                                resolution: params[:resolution],
                                 user_id: current_user.id)
     if @question.save
       flash[:success] = "Great question!"
