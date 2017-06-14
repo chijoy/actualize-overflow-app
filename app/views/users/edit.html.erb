@@ -11,7 +11,7 @@
   <br>
   <div>
     <%= label_tag :team, "Team:" %>
-    <%= select_tag(:team, options_for_select(team, nil), :prompt => "Please Select", :class => "form-control") %>
+    <%= select_tag(:team, options_for_select(team, @user.team), :prompt => "Please Select", :class => "form-control") %>
   </div>
   <br>
   <div>
