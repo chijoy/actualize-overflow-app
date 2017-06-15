@@ -17,6 +17,7 @@ class UsersController < ApplicationController
                       name: params[:name],
                       email: params[:email],
                       team: params[:team],
+                      type: params[:type],
                       password: params[:password],
                       password_confirmation: params[:password_confirmation]
                       )
@@ -42,6 +43,7 @@ class UsersController < ApplicationController
                       name: params[:name],
                       email: params[:email],
                       team: params[:team],
+                      type: params[:type],
                       password: params[:password],
                       password_confirmation: params[:password_confirmation],
                       admin: params[:admin]
