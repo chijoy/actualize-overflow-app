@@ -4,7 +4,6 @@
   <h4>Resolution: <%= @question.resolution %></h4>
 <% end %>
 <p>Status: <%= @question.status %> </p>
-<p>Posted by: <%= link_to @question.posted_by, "/users/#{@question.user.id}" %></p>
 
 <% if current_user.id == @question.user_id %> 
   <%= link_to "Edit", "/questions/#{@question.id}/edit", class: 'btn btn-sm btn-warning' %>
@@ -16,7 +15,6 @@
 
 <% @question.answers.each do |answer| %>
   <h5><%= answer.solution %></h5>
-  <p>Posted by: <%= link_to answer.posted_by, "/users/#{answer.user.id}" %></p>
   
   <% if current_user.id == answer.user_id %> 
     <%= link_to "Edit", "/answers/#{answer.id}/edit", :class  => 'btn btn-sm btn-warning' %>
